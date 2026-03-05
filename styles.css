@@ -154,7 +154,7 @@ a:hover {
 }
 
 .logo {
-  height: 200px;
+  height: 76px;
   width: auto;
   display: block;
 }
@@ -920,7 +920,7 @@ a:hover {
 }
 
 .footer-logo {
-  height: 100px;
+  height: 50px;
   width: auto;
   margin: 0 auto 1rem auto;
   display: block;
@@ -1336,4 +1336,45 @@ a:hover {
   .solution-grid { grid-template-columns: 1fr; }
   .placeholder-grid { grid-template-columns: 1fr; }
   .stat-grid { grid-template-columns: 1fr; }
+}
+/* ===============================
+   Logo sizing override
+   Big logos (~120px visual) WITHOUT enlarging header/footer
+   Paste at END of styles.css
+   =============================== */
+
+/* Lock header height back to normal */
+.header-inner{
+  padding: 1rem 1.5rem;     /* original spacing */
+  height: 76px;             /* keeps header from growing */
+  display: flex;
+  align-items: center;
+}
+
+/* Make the logo look ~120px while fitting inside header height */
+.logo{
+  height: 76px;             /* must fit inside header height */
+  width: auto;
+  display: block;
+  transform: scale(1.55);   /* 76 * 1.55 ≈ 118px */
+  transform-origin: left center;
+}
+
+/* Mobile: keep header normal + slightly smaller scale */
+@media (max-width: 480px){
+  .header-inner{ height: 68px; }
+  .logo{
+    height: 68px;
+    transform: scale(1.45); /* 68 * 1.45 ≈ 99px */
+  }
+}
+
+/* Footer logo: look ~120px without increasing footer height */
+.footer-logo{
+  height: 78px;             /* base height */
+  width: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  transform: scale(1.55);   /* 78 * 1.55 ≈ 121px */
+  transform-origin: center top;
 }
