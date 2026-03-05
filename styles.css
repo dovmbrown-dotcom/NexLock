@@ -154,7 +154,7 @@ a:hover {
 }
 
 .logo {
-  height: 100px;
+  height: 200px;
   width: auto;
   display: block;
 }
@@ -920,7 +920,7 @@ a:hover {
 }
 
 .footer-logo {
-  height: 44px;
+  height: 100px;
   width: auto;
   margin: 0 auto 1rem auto;
   display: block;
