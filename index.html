@@ -72,68 +72,108 @@
 <!-- E) Contact Section -->
 
 <section class="hero" id="home">
-<div class="hero-glow"></div>
-<div class="container hero-content">
-<div class="hero-badge reveal" data-reveal="fade-up">
-<span aria-hidden="true" class="badge-dot"></span>
-<span>Biometric • One‑Touch • Secure</span>
-</div>
-<p class="hero-product reveal" data-delay="40" data-reveal="fade-up">NexLock One Touch One Touch</p>
-<h1 class="hero-title reveal" data-delay="80" data-reveal="fade-up">Protection at your fingertips.</h1>
-<p class="hero-subtitle reveal" data-delay="160" data-reveal="fade-up">Modern security that’s trusted, secure, and easy to use. A smooth experience you can rely on.</p>
-<div class="hero-buttons reveal" data-delay="240" data-reveal="fade-up">
-<a class="btn btn-primary" href="#contact">Contact</a>
-<a class="btn btn-secondary" href="#research">View Research</a>
-</div>
+  <div class="hero-glow"></div>
 
-<!-- Interactive Lock -->
-<div class="hero-lock-wrap reveal" data-delay="280" data-reveal="fade-up">
+  <div class="container hero-layout">
+    <div class="hero-content">
+      <div class="hero-badge reveal" data-reveal="fade-up">
+        <span aria-hidden="true" class="badge-dot"></span>
+        <span>Biometric • One-Touch • Secure</span>
+      </div>
 
-<div class="hero-lock">
+      <p class="hero-product reveal" data-delay="40" data-reveal="fade-up">
+        NexLock One Touch
+      </p>
 
-<svg class="lock-svg" viewBox="0 0 220 220">
+      <h1 class="hero-title reveal" data-delay="80" data-reveal="fade-up">
+        Protection at your fingertips.
+      </h1>
 
-<!-- rays -->
-<g class="lock-rays" stroke="var(--accent-orange)" stroke-width="8" stroke-linecap="round" opacity="0">
-<path d="M178 62 L192 54"/>
-<path d="M186 86 L204 86"/>
-<path d="M176 104 L190 114"/>
-</g>
+      <p class="hero-subtitle reveal" data-delay="160" data-reveal="fade-up">
+        Modern security that’s trusted, secure, and easy to use. A smooth experience you can rely on.
+      </p>
 
-<!-- shackle -->
-<g class="lock-shackle">
-<path d="M82 96 V74 C82 46 104 28 128 28 C152 28 174 46 174 74 V96"
-fill="none"
-stroke="var(--deep-navy)"
-stroke-width="16"
-stroke-linecap="round"/>
-</g>
+      <div class="hero-buttons reveal" data-delay="240" data-reveal="fade-up">
+        <a class="btn btn-primary" href="#contact">Contact</a>
+        <a class="btn btn-secondary" href="#research">View Research</a>
+      </div>
 
-<!-- lock body -->
-<rect x="52" y="92" width="140" height="112" rx="22"
-fill="var(--accent-orange)"
-stroke="var(--deep-navy)"
-stroke-width="10"/>
+      <div class="hero-metrics reveal" data-delay="320" data-reveal="fade-up">
+        <div class="metric"><span class="metric-k">1</span><span class="metric-l">Touch access</span></div>
+        <div class="metric"><span class="metric-k">Fast</span><span class="metric-l">Setup</span></div>
+        <div class="metric"><span class="metric-k">Safe</span><span class="metric-l">Control</span></div>
+      </div>
+    </div>
 
-<!-- keyhole -->
-<circle cx="122" cy="148" r="14" fill="#b9a6ff"/>
-</svg>
+    <div class="hero-lock-side reveal" data-delay="220" data-reveal="fade-left">
+      <div class="hero-lock" role="img" aria-label="Interactive lock">
+        <svg class="lock-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <g class="lock-rays">
+            <path d="M182 66 L196 58" />
+            <path d="M190 90 L206 90" />
+            <path d="M180 108 L194 118" />
+          </g>
 
-</div>
-</div>
+          <g class="lock-shackle">
+            <path
+              d="M82 96 V74 C82 46 104 28 128 28 C152 28 174 46 174 74 V96"
+              fill="none"
+              stroke="var(--deep-navy)"
+              stroke-width="16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M98 96 V74 C98 56 112 44 128 44 C144 44 158 56 158 74 V96"
+              fill="none"
+              stroke="var(--muted-blue)"
+              stroke-width="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              opacity="0.55"
+            />
+          </g>
 
-<div class="hero-metrics reveal" data-delay="320" data-reveal="fade-up">
-<div class="metric"><span class="metric-k">1</span><span class="metric-l">Touch access</span></div>
-<div class="metric"><span class="metric-k">Fast</span><span class="metric-l">Setup</span></div>
-<div class="metric"><span class="metric-k">Safe</span><span class="metric-l">Control</span></div>
-</div>
-</div>
+          <rect
+            x="52"
+            y="92"
+            width="140"
+            height="112"
+            rx="22"
+            fill="var(--accent-orange)"
+            stroke="var(--deep-navy)"
+            stroke-width="10"
+          />
+
+          <path
+            d="M62 102 C96 92, 126 94, 182 114 V194 C182 202, 174 204, 170 204 H74 C66 204, 62 200, 62 194 Z"
+            fill="rgba(255,255,255,0.18)"
+          />
+
+          <g fill="rgba(255,255,255,0.85)">
+            <circle cx="76" cy="114" r="4"/>
+            <circle cx="168" cy="114" r="4"/>
+            <circle cx="76" cy="190" r="4"/>
+            <circle cx="168" cy="190" r="4"/>
+          </g>
+
+          <g>
+            <circle cx="122" cy="148" r="14" fill="#9f87ff"/>
+            <path
+              d="M122 158 C116 158, 114 162, 114 167 C114 176, 130 176, 130 167 C130 162, 128 158, 122 158 Z"
+              fill="#9f87ff"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
 </section><section class="section" id="abstract">
 <div class="container">
 <h2 class="section-title">Abstract</h2>
 <p class="abstract-text">
           This project explores a modern childproofing solution designed to reduce household injuries involving cabinets, sharp objects, and tip-over hazards.
-          NexLock One Touch One Touch aims to provide a secure yet simple locking system for families.
+          NexLock One Touch aims to provide a secure yet simple locking system for families.
         </p>
 </div>
 </section><section class="section" id="research">
