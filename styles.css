@@ -1378,3 +1378,35 @@ a:hover {
   transform: scale(1.55);   /* 78 * 1.55 ≈ 121px */
   transform-origin: center top;
 }
+.hero-lock-wrap{
+margin-top:2rem;
+display:flex;
+justify-content:center;
+}
+
+.hero-lock{
+width:180px;
+cursor:pointer;
+transition:transform .35s ease;
+}
+
+.hero-lock:hover{
+transform:scale(1.05);
+}
+
+.lock-shackle{
+transform-origin:128px 96px;
+transition:transform .45s ease;
+}
+
+.hero-lock:hover .lock-shackle{
+transform:rotate(-28deg) translate(-8px,4px);
+}
+
+.lock-rays{
+transition:opacity .3s ease;
+}
+
+.hero-lock:hover .lock-rays{
+opacity:1;
+}
