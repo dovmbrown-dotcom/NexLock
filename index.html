@@ -105,69 +105,54 @@
       </div>
     </div>
 
-    <div class="hero-lock-side reveal" data-delay="220" data-reveal="fade-left">
-      <div class="hero-lock" role="img" aria-label="Interactive lock">
-        <svg class="lock-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-          <g class="lock-rays">
-            <path d="M182 66 L196 58" />
-            <path d="M190 90 L206 90" />
-            <path d="M180 108 L194 118" />
-          </g>
+<div class="hero-lock-side reveal" data-delay="220" data-reveal="fade-left">
+  <div class="hero-lock" role="img" aria-label="Interactive lock">
+    <svg class="lock-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <g class="lock-rays">
+        <path d="M178 62 L192 54"/>
+        <path d="M186 86 L204 86"/>
+        <path d="M176 104 L190 114"/>
+      </g>
 
-          <g class="lock-shackle">
-            <path
-              d="M82 96 V74 C82 46 104 28 128 28 C152 28 174 46 174 74 V96"
-              fill="none"
-              stroke="var(--deep-navy)"
-              stroke-width="16"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M98 96 V74 C98 56 112 44 128 44 C144 44 158 56 158 74 V96"
-              fill="none"
-              stroke="var(--muted-blue)"
-              stroke-width="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              opacity="0.55"
-            />
-          </g>
+      <g class="lock-shackle">
+        <path d="M82 96 V74 C82 46 104 28 128 28 C152 28 174 46 174 74 V96"
+          fill="none"
+          stroke="var(--deep-navy)"
+          stroke-width="16"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+        <path d="M98 96 V74 C98 56 112 44 128 44 C144 44 158 56 158 74 V96"
+          fill="none"
+          stroke="var(--muted-blue)"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.55"/>
+      </g>
 
-          <rect
-            x="52"
-            y="92"
-            width="140"
-            height="112"
-            rx="22"
-            fill="var(--accent-orange)"
-            stroke="var(--deep-navy)"
-            stroke-width="10"
-          />
+      <rect x="52" y="92" width="140" height="112" rx="22"
+        fill="var(--accent-orange)"
+        stroke="var(--deep-navy)"
+        stroke-width="10"/>
 
-          <path
-            d="M62 102 C96 92, 126 94, 182 114 V194 C182 202, 174 204, 170 204 H74 C66 204, 62 200, 62 194 Z"
-            fill="rgba(255,255,255,0.18)"
-          />
+      <path d="M62 102 C96 92, 126 94, 182 114 V194 C182 202, 174 204, 170 204 H74 C66 204, 62 200, 62 194 Z"
+        fill="rgba(255,255,255,0.18)"/>
 
-          <g fill="rgba(255,255,255,0.85)">
-            <circle cx="76" cy="114" r="4"/>
-            <circle cx="168" cy="114" r="4"/>
-            <circle cx="76" cy="190" r="4"/>
-            <circle cx="168" cy="190" r="4"/>
-          </g>
+      <g fill="rgba(255,255,255,0.85)">
+        <circle cx="76" cy="114" r="4"/>
+        <circle cx="168" cy="114" r="4"/>
+        <circle cx="76" cy="190" r="4"/>
+        <circle cx="168" cy="190" r="4"/>
+      </g>
 
-          <g>
-            <circle cx="122" cy="148" r="14" fill="#9f87ff"/>
-            <path
-              d="M122 158 C116 158, 114 162, 114 167 C114 176, 130 176, 130 167 C130 162, 128 158, 122 158 Z"
-              fill="#9f87ff"
-            />
-          </g>
-        </svg>
-      </div>
-    </div>
+      <g>
+        <circle cx="122" cy="148" r="14" fill="#9f87ff"/>
+        <path d="M122 158 C116 158, 114 162, 114 167 C114 176, 130 176, 130 167 C130 162, 128 158, 122 158 Z"
+          fill="#9f87ff"/>
+      </g>
+    </svg>
   </div>
+</div>
 </section><section class="section" id="abstract">
 <div class="container">
 <h2 class="section-title">Abstract</h2>
@@ -405,6 +390,16 @@
 <a class="back-to-top" href="#home">Back to top</a>
 </div>
 </footer>
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const lock = document.querySelector(".hero-lock");
+  if (!lock) return;
+
+  lock.addEventListener("click", function () {
+    lock.classList.toggle("is-open");
+  });
+});
+</script>
 <script src="script.js"></script>
 </body>
 </html>
