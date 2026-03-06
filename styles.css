@@ -1409,7 +1409,7 @@ a:hover {
    ================================ */
 
 .hero-lock{
-  width: 200px;
+  width: 300px;
   max-width: 100%;
   cursor: pointer;
   user-select: none;
@@ -1443,11 +1443,11 @@ a:hover {
 }
 
 .hero-lock:hover .lock-shackle{
-  transform: rotate(-26deg) translate(-2px, -2px);
+  transform: rotate(28deg) translate(6px, -8px);
 }
 
 .hero-lock.is-open .lock-shackle{
-  transform: rotate(-26deg) translate(-2px, -2px);
+  transform: rotate(28deg) translate(6px, -8px);
 }
 
 .hero-lock:hover .lock-rays{
