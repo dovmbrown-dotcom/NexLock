@@ -130,26 +130,51 @@
           opacity="0.55"/>
       </g>
 
-      <rect x="52" y="92" width="140" height="112" rx="22"
-        fill="var(--accent-orange)"
-        stroke="var(--deep-navy)"
-        stroke-width="10"/>
+<!-- lock body styled like logo -->
+<rect x="52" y="92" width="140" height="112" rx="22"
+  fill="#586274"
+  stroke="var(--deep-navy)"
+  stroke-width="10"/>
 
-      <path d="M62 102 C96 92, 126 94, 182 114 V194 C182 202, 174 204, 170 204 H74 C66 204, 62 200, 62 194 Z"
-        fill="rgba(255,255,255,0.18)"/>
+<!-- subtle inner highlight -->
+<path d="M64 104 C96 96, 132 98, 178 116 V192 C178 198, 172 200, 168 200 H78 C70 200, 64 194, 64 186 Z"
+  fill="rgba(255,255,255,0.10)"/>
 
-      <g fill="rgba(255,255,255,0.85)">
-        <circle cx="76" cy="114" r="4"/>
-        <circle cx="168" cy="114" r="4"/>
-        <circle cx="76" cy="190" r="4"/>
-        <circle cx="168" cy="190" r="4"/>
-      </g>
+<!-- logo-style fingerprint -->
+<g
+  fill="none"
+  stroke="var(--accent-orange)"
+  stroke-width="6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <!-- outer curve -->
+  <path d="M106 166
+           C106 143, 120 129, 137 129
+           C154 129, 167 141, 167 158" />
 
-      <g>
-        <circle cx="122" cy="148" r="14" fill="#9f87ff"/>
-        <path d="M122 158 C116 158, 114 162, 114 167 C114 176, 130 176, 130 167 C130 162, 128 158, 122 158 Z"
-          fill="#9f87ff"/>
-      </g>
+  <!-- middle curve -->
+  <path d="M113 166
+           C113 148, 123 138, 137 138
+           C149 138, 158 146, 158 158" />
+
+  <!-- inner curve -->
+  <path d="M121 166
+           C121 153, 128 146, 137 146
+           C145 146, 151 151, 151 158" />
+
+  <!-- lower swirl / stem -->
+  <path d="M137 146
+           C137 152, 136 157, 133 162
+           C130 167, 126 171, 121 174" />
+
+  <!-- small hook -->
+  <path d="M121 174
+           C126 176, 131 176, 135 173" />
+
+  <!-- accent dot like logo -->
+  <circle cx="101" cy="174" r="4" fill="var(--accent-orange)" stroke="none"/>
+</g>
     </svg>
   </div>
 </div>
