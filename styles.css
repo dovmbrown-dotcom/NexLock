@@ -1252,8 +1252,8 @@ a:hover {
 
 .solution-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 .solution-card {
@@ -1492,4 +1492,31 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
   }
+}
+/* ================================
+   Ideate Solution page image cards
+   ================================ */
+
+.solution-card .solution-image{
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  box-shadow: 0 6px 22px var(--shadow-color);
+}
+
+.solution-card .solution-list-title{
+  margin-top: 1rem;
+}
+
+.solution-card .clean-list{
+  margin-top: 0.5rem;
+}
+
+.solution-card .steps{
+  margin-top: 0.75rem;
 }
