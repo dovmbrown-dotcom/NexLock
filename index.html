@@ -108,11 +108,11 @@
 <div class="hero-lock-side reveal" data-delay="220" data-reveal="fade-left">
   <div class="hero-lock" role="img" aria-label="Interactive lock">
     <svg class="lock-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-      <g class="lock-rays">
-        <path d="M188 62 L192 54"/>
-        <path d="M196 86 L204 86"/>
-        <path d="M186 104 L190 114"/>
-      </g>
+    <g class="lock-rays">
+  <path d="M182 66 L196 58"/>
+  <path d="M190 90 L206 90"/>
+  <path d="M180 108 L194 118"/>
+</g>
 
       <g class="lock-shackle">
         <path d="M82 96 V74 C82 46 104 28 128 28 C152 28 174 46 174 74 V96"
@@ -131,49 +131,40 @@
       </g>
 
 <!-- lock body styled like logo -->
+<!-- logo-style lock body -->
 <rect x="52" y="92" width="140" height="112" rx="22"
-  fill="#586274"
+  fill="#6f7a8e"
   stroke="var(--deep-navy)"
   stroke-width="10"/>
 
-<!-- subtle inner highlight -->
-<path d="M64 104 C96 96, 132 98, 178 116 V192 C178 198, 172 200, 168 200 H78 C70 200, 64 194, 64 186 Z"
-  fill="rgba(255,255,255,0.10)"/>
+<!-- subtle panel highlight -->
+<path d="M68 108 C96 102, 136 104, 172 118 V186 C172 192, 166 196, 160 196 H84 C76 196, 68 190, 68 182 Z"
+  fill="rgba(255,255,255,0.09)"/>
 
-<!-- logo-style fingerprint -->
-<g
-  fill="none"
-  stroke="var(--accent-orange)"
-  stroke-width="6"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <!-- outer curve -->
-  <path d="M106 166
-           C106 143, 120 129, 137 129
-           C154 129, 167 141, 167 158" />
+<!-- simple logo fingerprint -->
+<g fill="none"
+   stroke="#f26a2e"
+   stroke-linecap="round"
+   stroke-linejoin="round">
+  <path d="M108 165
+           C108 144, 120 132, 138 132
+           C154 132, 166 143, 166 158"
+        stroke-width="7"/>
 
-  <!-- middle curve -->
-  <path d="M113 166
-           C113 148, 123 138, 137 138
-           C149 138, 158 146, 158 158" />
+  <path d="M120 165
+           C120 149, 127 141, 138 141
+           C148 141, 156 148, 156 158"
+        stroke-width="7"/>
 
-  <!-- inner curve -->
-  <path d="M121 166
-           C121 153, 128 146, 137 146
-           C145 146, 151 151, 151 158" />
+  <path d="M138 142
+           C138 153, 134 161, 126 170"
+        stroke-width="7"/>
 
-  <!-- lower swirl / stem -->
-  <path d="M137 146
-           C137 152, 136 157, 133 162
-           C130 167, 126 171, 121 174" />
+  <path d="M126 170
+           C131 172, 137 172, 143 169"
+        stroke-width="7"/>
 
-  <!-- small hook -->
-  <path d="M121 174
-           C126 176, 131 176, 135 173" />
-
-  <!-- accent dot like logo -->
-  <circle cx="101" cy="174" r="4" fill="var(--accent-orange)" stroke="none"/>
+  <circle cx="108" cy="171" r="5" fill="#f26a2e" stroke="none"/>
 </g>
     </svg>
   </div>
