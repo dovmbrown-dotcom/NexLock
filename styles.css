@@ -1470,22 +1470,43 @@ a:hover {
 .solution-card .steps{
   margin-top: 0.75rem;
 }
-.hero-logo-lock{
+/* Animated homepage logo lock */
+.hero-logo-lock-wrap{
+  position: relative;
   width: 260px;
   max-width: 100%;
   display: block;
   filter: drop-shadow(0 18px 30px rgba(7,24,67,0.18));
-  transition: transform .35s var(--ease-out), filter .35s var(--ease-out);
-  transform-origin: center center;
 }
 
-.hero-logo-lock:hover{
-  transform: translateY(-8px) rotate(-10deg) scale(1.03);
-  filter: drop-shadow(0 22px 36px rgba(7,24,67,0.24));
+.hero-logo-body{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo-shackle{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 2;
+
+  /* hinge on right side of shackle */
+  transform-origin: 74% 34%;
+  transition: transform .45s var(--ease-out);
+}
+
+/* unlock on hover */
+.hero-logo-lock-wrap:hover .hero-logo-shackle{
+  transform: rotate(28deg);
 }
 
 @media (max-width: 900px){
-  .hero-logo-lock{
+  .hero-logo-lock-wrap{
     width: 180px;
     margin-top: 1rem;
   }
