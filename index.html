@@ -352,6 +352,32 @@ Two compact internal electromagnet mounts automatically secure cabinet doors whe
 <a class="back-to-top" href="#home">Back to top</a>
 </div>
 </footer>
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sensor = document.getElementById("fpSensor");
+  const lock = document.querySelector(".lock");
+  const status = document.getElementById("lockDemoStatus");
+
+  if (!sensor || !lock || !status) return;
+
+  const unlock = () => {
+    lock.classList.add("is-unlocked");
+    status.textContent = "UNLOCKED";
+    status.classList.add("is-unlocked");
+  };
+
+  const relock = () => {
+    lock.classList.remove("is-unlocked");
+    status.textContent = "LOCKED";
+    status.classList.remove("is-unlocked");
+  };
+
+  sensor.addEventListener("mouseenter", unlock);
+  sensor.addEventListener("mouseleave", relock);
+  sensor.addEventListener("focus", unlock);
+  sensor.addEventListener("blur", relock);
+});
+</script>
 <script src="script.js"></script>
 </body>
 </html>
