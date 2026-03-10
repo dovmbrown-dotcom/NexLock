@@ -106,45 +106,11 @@
     </div>
 
 <div class="hero-lock-side reveal" data-delay="220" data-reveal="fade-left">
-  <div class="hero-lock" role="img" aria-label="Interactive lock">
-    <svg class="lock-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-    <g class="lock-rays">
-  <path d="M182 66 L196 58"/>
-  <path d="M190 90 L206 90"/>
-  <path d="M180 108 L194 118"/>
-</g>
-
-      <g class="lock-shackle">
-        <path d="M82 96 V74 C82 46 104 28 128 28 C152 28 174 46 174 74 V96"
-          fill="none"
-          stroke="var(--deep-navy)"
-          stroke-width="16"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-        <path d="M98 96 V74 C98 56 112 44 128 44 C144 44 158 56 158 74 V96"
-          fill="none"
-          stroke="var(--muted-blue)"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          opacity="0.55"/>
-      </g>
-
-<!-- lock body styled like logo -->
-<!-- logo-style lock body -->
-<rect x="52" y="92" width="140" height="112" rx="22"
-  fill="#6f7a8e"
-  stroke="var(--deep-navy)"
-  stroke-width="10"/>
-
-<!-- subtle panel highlight -->
-<path d="M68 108 C96 102, 136 104, 172 118 V186 C172 192, 166 196, 160 196 H84 C76 196, 68 190, 68 182 Z"
-  fill="rgba(255,255,255,0.09)"/>
-
-<!-- simple logo fingerprint -->
-<image href="Screenshot_2026-03-09_at_8.27.19_PM-removebg-preview.png" x="92" y="128" width="62" height="62" preserveAspectRatio="xMidYMid meet"/>
-    </svg>
-  </div>
+  <img
+    class="hero-logo-lock"
+    src="Screenshot_2026-03-09_at_8.27.19_PM-removebg-preview.png"
+    alt="NexLock lock logo"
+  />
 </div>
          </div>
   </div>
@@ -384,16 +350,6 @@ Two compact internal electromagnet mounts automatically secure cabinet doors whe
 <a class="back-to-top" href="#home">Back to top</a>
 </div>
 </footer>
-      <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const lock = document.querySelector(".hero-lock");
-  if (!lock) return;
-
-  lock.addEventListener("click", function () {
-    lock.classList.toggle("is-open");
-  });
-});
-</script>
 <script src="script.js"></script>
 </body>
 </html>
