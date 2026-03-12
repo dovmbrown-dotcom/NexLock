@@ -1408,7 +1408,47 @@ a:hover {
    INTERACTIVE LOCK
    ================================ */
 
+.hero-lock{
+  width: 300px;
+  max-width: 100%;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 16px 28px rgba(7,24,67,0.16));
+  transition: transform .3s var(--ease-out), filter .3s var(--ease-out);
+}
 
+.hero-lock:hover{
+  transform: translateY(-3px) scale(1.03);
+  filter: drop-shadow(0 20px 34px rgba(7,24,67,0.2));
+}
+
+.lock-svg{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lock-rays{
+  stroke: var(--accent-orange);
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.lock-shackle{
+  transform-box: view-box;
+  transform-origin: 174px 96px;
+  transition: transform .45s var(--ease-out);
+}
+
+.hero-lock:hover .lock-shackle{
+  transform: rotate(28deg) translate(6px, -8px);
+}
+
+.hero-lock:hover .lock-rays{
+  opacity: 1;
+}
 
 /* ================================
    MOBILE
@@ -1421,6 +1461,10 @@ a:hover {
     gap: 1.5rem;
     min-height: auto;
   }
+   .hero-lock{
+  width: 140px;
+  margin-top: 1rem;
+}
 
   .hero-content{
     max-width: 100%;
