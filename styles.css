@@ -1402,6 +1402,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+     padding: 40px;
 }
 
 /* ================================
@@ -1409,7 +1410,7 @@ a:hover {
    ================================ */
 
 .hero-lock{
-  width: 300px;
+  width: 320px;
   max-width: 100%;
   cursor: pointer;
   user-select: none;
