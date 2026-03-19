@@ -1941,13 +1941,12 @@ a:hover {
 
 .solution-media img {
   width: 100%;
-  max-width: 520px;   /* bigger */
-  height: 260px;      /* taller */
-  object-fit: contain;
-  border-radius: 16px;
+  max-width: 600px;     /* bigger but controlled */
+  height: 320px;        /* larger visual presence */
+  object-fit: contain;  /* keeps sketch proportions */
+  border-radius: 14px;
   box-shadow: 0 10px 25px rgba(7, 24, 67, 0.08);
-  background: rgba(228, 233, 239, 0.3);
-  margin: 0 auto;
+  background: transparent; /* removes gray box look */
 }
 
 .solution-content {
@@ -1979,16 +1978,15 @@ a:hover {
   }
 }
 .solution-content {
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,247,251,0.95));
-  border: 1px solid rgba(47, 74, 109, 0.10);
-  border-radius: 20px;
-  padding: 1.4rem;
-  box-shadow: 0 12px 28px rgba(7, 24, 67, 0.06);
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 .solution-row {
   align-items: stretch;
 }
 .featured-solution .solution-content {
-  border: 1px solid rgba(47, 74, 109, 0.10);
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,247,251,0.95));
+  border: 1px solid rgba(47, 74, 109, 0.12);
+  background: white;
 }
