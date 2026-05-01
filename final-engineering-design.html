@@ -1,170 +1,452 @@
-<main class="process-page">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Engineering Design — NexLock One Touch</title>
 
-  <section class="section page-hero" id="home">
-    <div class="container">
-      <span class="tag">Engineering Portfolio</span>
-      <h1>Final Engineering Design</h1>
-      <p class="lead">
-        This page documents the final NexLock One Touch prototype, including its working system, engineering diagrams, CAD models, materials, and design iterations.
-      </p>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #071843;
+      --blue: #2F4A6D;
+      --light-blue: #7C9DBD;
+      --orange: #F26A2E;
+      --soft-bg: #F7F4EF;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans Thai", sans-serif;
+      background: var(--soft-bg);
+      color: var(--navy);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 244, 239, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(7, 24, 67, 0.12);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 58px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--orange);
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: 0 auto;
+    }
+
+    .page-hero {
+      padding: 90px 0 50px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(242, 106, 46, 0.12);
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: var(--blue);
+      line-height: 1.7;
+    }
+
+    .engineering-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      padding: 30px 0 90px;
+    }
+
+    .engineering-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(7, 24, 67, 0.12);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(7, 24, 67, 0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .engineering-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 65px rgba(7, 24, 67, 0.16);
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    .engineering-card h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    .engineering-card p {
+      color: var(--blue);
+      line-height: 1.65;
+      margin: 14px 0 0;
+    }
+
+    .media-box {
+      margin-top: 18px;
+      background: linear-gradient(135deg, rgba(124,157,189,0.18), rgba(242,106,46,0.10));
+      border: 1px dashed rgba(7, 24, 67, 0.22);
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 230px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .media-box img,
+    .media-box video {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .placeholder-text {
+      color: var(--blue);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .bom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .bom-table th,
+    .bom-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(7, 24, 67, 0.12);
+    }
+
+    .bom-table th {
+      background: rgba(124, 157, 189, 0.22);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .iteration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .iteration-card {
+      background: rgba(247, 244, 239, 0.85);
+      border: 1px solid rgba(7, 24, 67, 0.12);
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .iteration-card img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 10px;
+    }
+
+    .iteration-card p {
+      margin: 0;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid rgba(7, 24, 67, 0.12);
+      text-align: center;
+      color: var(--blue);
+    }
+
+    .back-to-top {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      .nav {
+        display: none;
+      }
+
+      .engineering-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        grid-column: auto;
+      }
+
+      .iteration-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        height: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html#home">
+        <img src="logo.png" alt="NexLock One Touch Logo" class="logo" />
+      </a>
+
+      <nav class="nav">
+        <a href="index.html#home">Home</a>
+        <a href="background-research-problem-definition.html">Research</a>
+        <a href="ideate-solution.html">Ideate</a>
+        <a href="final-engineering-design.html">Final Design</a>
+        <a href="test-reflect.html">Test & Reflect</a>
+        <a href="the-team.html">The Team</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <div class="container engineering-grid">
+  <main>
 
-      <div class="process-card feature-card reveal" data-reveal="fade-up">
-        <div class="card-header">
-          <span class="tag">Prototype</span>
-          <h2>Video of Working Prototype</h2>
-        </div>
-        <div class="media-box video-box">
-          <!-- Replace src with your video file -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag">Engineering Portfolio</span>
+        <h1>Final Engineering Design</h1>
+        <p class="lead">
+          This page documents the final NexLock One Touch prototype, including the working system, diagrams, materials, CAD model, and design iterations.
+        </p>
+      </div>
+    </section>
+
+    <section class="container engineering-grid">
+
+      <div class="engineering-card wide">
+        <span class="tag">Prototype</span>
+        <h2>Video of Working Prototype</h2>
+        <div class="media-box">
           <video controls>
-            <source src="assets/working-prototype.mp4" type="video/mp4">
-            Your browser does not support video.
+            <source src="assets/working-prototype.mp4" type="video/mp4" />
           </video>
         </div>
-        <p class="muted">Insert a video showing NexLock locking, unlocking, and responding to user input.</p>
+        <p>Upload your prototype video as <strong>assets/working-prototype.mp4</strong>.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">System Logic</span>
         <h2>System Block Diagram</h2>
         <div class="media-box">
-          <img src="assets/system-block-diagram.png" alt="System Block Diagram">
+          <img src="assets/system-block-diagram.png" alt="System Block Diagram" />
         </div>
-        <p class="muted">Shows how the fingerprint sensor, servo, buzzer, and locking system work together.</p>
+        <p>Shows how the fingerprint sensor, servo, buzzer, and locking mechanism work together.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">Materials</span>
         <h2>Bill of Materials with Costs</h2>
-        <div class="table-wrap">
-          <table class="bom-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Purpose</th>
-                <th>Cost</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Servo Motor</td>
-                <td>Moves the hook/latch mechanism</td>
-                <td>$___</td>
-              </tr>
-              <tr>
-                <td>Fingerprint Sensor</td>
-                <td>Authenticates user access</td>
-                <td>$___</td>
-              </tr>
-              <tr>
-                <td>Buzzer</td>
-                <td>Alerts when cabinet is left open</td>
-                <td>$___</td>
-              </tr>
-              <tr>
-                <td>Microcontroller</td>
-                <td>Controls input/output logic</td>
-                <td>$___</td>
-              </tr>
-              <tr>
-                <td>3D Printed/CAD Parts</td>
-                <td>Holds locking mechanism</td>
-                <td>$___</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="bom-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Purpose</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Servo Motor</td>
+              <td>Moves the hook/latch mechanism</td>
+              <td>$___</td>
+            </tr>
+            <tr>
+              <td>Fingerprint Sensor</td>
+              <td>Authenticates user access</td>
+              <td>$___</td>
+            </tr>
+            <tr>
+              <td>Buzzer</td>
+              <td>Alerts when cabinet is left open</td>
+              <td>$___</td>
+            </tr>
+            <tr>
+              <td>Microcontroller</td>
+              <td>Controls input/output logic</td>
+              <td>$___</td>
+            </tr>
+            <tr>
+              <td>CAD / Printed Parts</td>
+              <td>Holds the locking mechanism</td>
+              <td>$___</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">Electronics</span>
         <h2>Wiring Diagram</h2>
         <div class="media-box">
-          <img src="assets/wiring-diagram.png" alt="Wiring Diagram">
+          <img src="assets/wiring-diagram.png" alt="Wiring Diagram" />
         </div>
-        <p class="muted">Insert wiring diagram showing the connections between the board, fingerprint sensor, servo, buzzer, and power source.</p>
+        <p>Insert a wiring diagram showing connections between the board, fingerprint sensor, servo, buzzer, and power source.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">Code Logic</span>
         <h2>Programming Flowchart</h2>
         <div class="media-box">
-          <img src="assets/programming-flowchart.png" alt="Programming Flowchart">
+          <img src="assets/programming-flowchart.png" alt="Programming Flowchart" />
         </div>
-        <p class="muted">Shows the program logic from fingerprint scan to unlock, delay, buzzer alert, and relock.</p>
+        <p>Shows the logic from fingerprint scan to unlock, delay, buzzer alert, and relock.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">CAD</span>
         <h2>CAD Model</h2>
         <div class="media-box">
-          <img src="assets/cad-model.png" alt="CAD Model">
+          <img src="assets/cad-model.png" alt="CAD Model" />
         </div>
-        <p class="muted">Insert a screenshot or rendering of the full CAD model.</p>
+        <p>Upload a screenshot or rendering of your full CAD model.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">Dimensions</span>
         <h2>CAD Drawings with Dimensions</h2>
         <div class="media-box">
-          <img src="assets/cad-dimensions.png" alt="CAD Drawings with Dimensions">
+          <img src="assets/cad-dimensions.png" alt="CAD Drawings with Dimensions" />
         </div>
-        <p class="muted">Add technical drawings that show measurements and part dimensions.</p>
+        <p>Add drawings that show measurements and technical dimensions.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">Motion</span>
         <h2>Animation</h2>
-        <div class="media-box video-box">
-          <!-- Replace with animation video/gif -->
+        <div class="media-box">
           <video controls>
-            <source src="assets/animation.mp4" type="video/mp4">
-            Your browser does not support video.
+            <source src="assets/animation.mp4" type="video/mp4" />
           </video>
         </div>
-        <p class="muted">Insert an animation showing how the locking mechanism moves.</p>
+        <p>Upload an animation showing how the locking mechanism moves.</p>
       </div>
 
-      <div class="process-card reveal" data-reveal="fade-up">
+      <div class="engineering-card">
         <span class="tag">Rendering</span>
         <h2>Photo Rendering</h2>
         <div class="media-box">
-          <img src="assets/photo-rendering.png" alt="Photo Rendering">
+          <img src="assets/photo-rendering.png" alt="Photo Rendering" />
         </div>
-        <p class="muted">Add a polished rendering of the final prototype in use.</p>
+        <p>Add a polished rendering of the final prototype in use.</p>
       </div>
 
-      <div class="process-card feature-card reveal" data-reveal="fade-up">
+      <div class="engineering-card wide">
         <span class="tag">Iterations</span>
         <h2>Images of Various Design Iterations</h2>
 
         <div class="iteration-grid">
           <div class="iteration-card">
-            <img src="assets/iteration-1.png" alt="Design Iteration 1">
+            <img src="assets/iteration-1.png" alt="Design Iteration 1" />
             <p>Iteration 1</p>
           </div>
 
           <div class="iteration-card">
-            <img src="assets/iteration-2.png" alt="Design Iteration 2">
+            <img src="assets/iteration-2.png" alt="Design Iteration 2" />
             <p>Iteration 2</p>
           </div>
 
           <div class="iteration-card">
-            <img src="assets/iteration-3.png" alt="Design Iteration 3">
+            <img src="assets/iteration-3.png" alt="Design Iteration 3" />
             <p>Iteration 3</p>
           </div>
         </div>
 
-        <p class="muted">
+        <p>
           Use this section to show how the design changed over time based on testing, feedback, and engineering constraints.
         </p>
       </div>
 
-    </div>
-  </section>
+    </section>
 
-</main>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Modern security with a smooth, easy look.</p>
+      <a href="#top" class="back-to-top">Back to top</a>
+    </div>
+  </footer>
+
+</body>
+</html>
