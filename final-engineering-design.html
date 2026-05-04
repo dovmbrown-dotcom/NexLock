@@ -18,9 +18,7 @@
       --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -33,7 +31,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(247, 244, 239, 0.95);
+      background: rgba(247, 244, 239, 0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(7, 24, 67, 0.12);
     }
@@ -65,9 +63,7 @@
       font-size: 0.95rem;
     }
 
-    .nav a:hover {
-      color: var(--orange);
-    }
+    .nav a:hover { color: var(--orange); }
 
     .container {
       width: min(1150px, 92%);
@@ -119,7 +115,7 @@
     }
 
     .engineering-card {
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid rgba(7, 24, 67, 0.12);
       border-radius: 26px;
       padding: 28px;
@@ -132,9 +128,7 @@
       box-shadow: 0 24px 65px rgba(7, 24, 67, 0.16);
     }
 
-    .wide {
-      grid-column: 1 / -1;
-    }
+    .wide { grid-column: 1 / -1; }
 
     .engineering-card h2 {
       font-size: 1.7rem;
@@ -167,12 +161,7 @@
       width: 100%;
       border-radius: 16px;
       display: block;
-    }
-
-    .placeholder-text {
-      color: var(--blue);
-      font-weight: 600;
-      text-align: center;
+      object-fit: contain;
     }
 
     .bom-table {
@@ -197,28 +186,30 @@
       font-weight: 700;
     }
 
-    .iteration-grid {
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin-top: 20px;
     }
 
-    .iteration-card {
-      background: rgba(247, 244, 239, 0.85);
+    .gallery-card {
+      background: rgba(247, 244, 239, 0.9);
       border: 1px solid rgba(7, 24, 67, 0.12);
       border-radius: 20px;
-      padding: 16px;
+      padding: 14px;
       text-align: center;
+      box-shadow: 0 10px 28px rgba(7, 24, 67, 0.08);
     }
 
-    .iteration-card img {
+    .gallery-card img {
       width: 100%;
       border-radius: 14px;
+      display: block;
       margin-bottom: 10px;
     }
 
-    .iteration-card p {
+    .gallery-card p {
       margin: 0;
       font-weight: 700;
       color: var(--blue);
@@ -238,215 +229,229 @@
     }
 
     @media (max-width: 850px) {
-      .nav {
-        display: none;
-      }
-
-      .engineering-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .wide {
-        grid-column: auto;
-      }
-
-      .iteration-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .logo {
-        height: 48px;
-      }
+      .nav { display: none; }
+      .engineering-grid { grid-template-columns: 1fr; }
+      .wide { grid-column: auto; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .logo { height: 48px; }
     }
   </style>
 </head>
 
 <body id="top">
 
-  <header class="header">
-    <div class="header-inner">
-      <a href="index.html#home">
-        <img src="logo.png" alt="NexLock One Touch Logo" class="logo" />
-      </a>
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html#home">
+      <img src="logo.png" alt="NexLock One Touch Logo" class="logo" />
+    </a>
 
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="background-research-problem-definition.html">Research</a>
-        <a href="ideate-solution.html">Ideate</a>
-        <a href="final-engineering-design.html">Final Design</a>
-        <a href="test-reflect.html">Test & Reflect</a>
-        <a href="the-team.html">The Team</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav">
+      <a href="index.html#home">Home</a>
+      <a href="background-research-problem-definition.html">Research</a>
+      <a href="ideate-solution.html">Ideate</a>
+      <a href="final-engineering-design.html">Final Design</a>
+      <a href="test-reflect.html">Test & Reflect</a>
+      <a href="the-team.html">The Team</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
+<main>
 
-    <section class="page-hero">
-      <div class="container">
-        <span class="tag">Engineering Portfolio</span>
-        <h1>Final Engineering Design</h1>
-        <p class="lead">
-          This page documents the final NexLock One Touch prototype, including the working system, diagrams, materials, CAD model, and design iterations.
-        </p>
-      </div>
-    </section>
-
-    <section class="container engineering-grid">
-
-      <div class="engineering-card wide">
-        <span class="tag">Prototype</span>
-        <h2>Video of Working Prototype</h2>
-        <div class="media-box">
-          <video controls>
-            <source src="working-prototype.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <p>Upload your prototype video as <strong>assets/working-prototype.mp4</strong>.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">System Logic</span>
-        <h2>System Block Diagram</h2>
-        <div class="media-box">
-          <img src="system-block-diagram.png" alt="System Block Diagram" />
-        </div>
-        <p>Shows how the fingerprint sensor, servo, buzzer, and locking mechanism work together.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">Materials</span>
-        <h2>Bill of Materials with Costs</h2>
-        <table class="bom-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Purpose</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Servo Motor</td>
-              <td>Moves the hook/latch mechanism</td>
-              <td>$10.99</td>
-            </tr>
-            <tr>
-              <td>Fingerprint Sensor</td>
-              <td>Authenticates user access</td>
-              <td>$13.99</td>
-            </tr>
-            <tr>
-              <td>Buzzer</td>
-              <td>Alerts when cabinet is left open</td>
-              <td>$1.99</td>
-            </tr>
-            <tr>
-              <td>Arduino</td>
-              <td>Controls input/output logic</td>
-              <td>$20.00</td>
-            </tr>
-            <tr>
-              <td>Battery</td>
-              <td>Holds the locking mechanism</td>
-              <td>$9.99</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">Electronics</span>
-        <h2>Wiring Diagram</h2>
-        <div class="media-box">
-          <img src="wiring-diagram.png" alt="Wiring Diagram" />
-        </div>
-        <p>Insert a wiring diagram showing connections between the board, fingerprint sensor, servo, buzzer, and power source.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">Code Logic</span>
-        <h2>Programming Flowchart</h2>
-        <div class="media-box">
-          <img src="programming-flowchart.png" alt="Programming Flowchart" />
-        </div>
-        <p>Shows the logic from fingerprint scan to unlock, delay, buzzer alert, and relock.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">CAD</span>
-        <h2>CAD Model</h2>
-        <div class="media-box">
-          <img src="cad-model.png" alt="CAD Model" />
-        </div>
-        <p>Upload a screenshot or rendering of your full CAD model.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">Dimensions</span>
-        <h2>CAD Drawings with Dimensions</h2>
-        <div class="media-box">
-          <img src="cad-dimensions.png" alt="CAD Drawings with Dimensions" />
-        </div>
-        <p>Add drawings that show measurements and technical dimensions.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">Motion</span>
-        <h2>Animation</h2>
-        <div class="media-box">
-          <video controls>
-            <source src="animation.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <p>Upload an animation showing how the locking mechanism moves.</p>
-      </div>
-
-      <div class="engineering-card">
-        <span class="tag">Rendering</span>
-        <h2>Photo Rendering</h2>
-        <div class="media-box">
-          <img src="photo-rendering.png" alt="Photo Rendering" />
-        </div>
-        <p>Add a polished rendering of the final prototype in use.</p>
-      </div>
-
-      <div class="engineering-card wide">
-        <span class="tag">Iterations</span>
-        <h2>Images of Various Design Iterations</h2>
-
-        <div class="iteration-grid">
-          <div class="iteration-card">
-            <img src="iteration-1.png" alt="Design Iteration 1" />
-            <p>Iteration 1</p>
-          </div>
-
-          <div class="iteration-card">
-            <img src="iteration-2.png" alt="Design Iteration 2" />
-            <p>Iteration 2</p>
-          </div>
-
-          <div class="iteration-card">
-            <img src="iteration-3.png" alt="Design Iteration 3" />
-            <p>Iteration 3</p>
-          </div>
-        </div>
-
-        <p>
-          Use this section to show how the design changed over time based on testing, feedback, and engineering constraints.
-        </p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="footer">
+  <section class="page-hero">
     <div class="container">
-      <p>Modern security with a smooth, easy look.</p>
-      <a href="#top" class="back-to-top">Back to top</a>
+      <span class="tag">Engineering Portfolio</span>
+      <h1>Final Engineering Design</h1>
+      <p class="lead">
+        This page documents the final NexLock One Touch prototype, including the working system, diagrams, materials, CAD models, and design iterations.
+      </p>
     </div>
-  </footer>
+  </section>
+
+  <section class="container engineering-grid">
+
+    <div class="engineering-card wide">
+      <span class="tag">Prototype</span>
+      <h2>Video of Working Prototype</h2>
+      <div class="media-box">
+        <video controls>
+          <source src="working-prototype.mp4" type="video/mp4" />
+          Your browser does not support video.
+        </video>
+      </div>
+      <p>Upload your working prototype video as <strong>working-prototype.mp4</strong>.</p>
+    </div>
+
+    <div class="engineering-card">
+      <span class="tag">System Logic</span>
+      <h2>System Block Diagram</h2>
+      <div class="media-box">
+        <img src="BlockDiagram.png" alt="System Block Diagram" />
+      </div>
+      <p>This diagram shows how the fingerprint sensor, servo, buzzer, and locking mechanism work together.</p>
+    </div>
+
+    <div class="engineering-card">
+      <span class="tag">Materials</span>
+      <h2>Bill of Materials with Costs</h2>
+      <table class="bom-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Purpose</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Servo Motor</td>
+            <td>Moves the hook/latch mechanism</td>
+            <td>$10.99</td>
+          </tr>
+          <tr>
+            <td>Fingerprint Sensor</td>
+            <td>Authenticates user access</td>
+            <td>$13.99</td>
+          </tr>
+          <tr>
+            <td>Buzzer</td>
+            <td>Alerts when cabinet is left open</td>
+            <td>$1.99</td>
+          </tr>
+          <tr>
+            <td>Arduino</td>
+            <td>Controls input/output logic</td>
+            <td>$20.00</td>
+          </tr>
+          <tr>
+            <td>Battery</td>
+            <td>Powers the system</td>
+            <td>$9.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="engineering-card">
+      <span class="tag">Electronics</span>
+      <h2>Wiring Diagram</h2>
+      <div class="media-box">
+        <img src="WiringDiagram.png" alt="Wiring Diagram" />
+      </div>
+      <p>This diagram shows the connections between the board, fingerprint sensor, servo, buzzer, and power source.</p>
+    </div>
+
+    <div class="engineering-card">
+      <span class="tag">Code Logic</span>
+      <h2>Programming Flowchart</h2>
+      <div class="media-box">
+        <img src="Drawing1.png" alt="Programming Flowchart" />
+      </div>
+      <p>This flowchart shows the logic from fingerprint scan to unlock, buzzer alert, and relock.</p>
+    </div>
+
+    <div class="engineering-card wide">
+      <span class="tag">CAD</span>
+      <h2>CAD Model</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="CAD1.png" alt="CAD Model 1" />
+          <p>CAD Model View 1</p>
+        </div>
+        <div class="gallery-card">
+          <img src="CAD2.png" alt="CAD Model 2" />
+          <p>CAD Model View 2</p>
+        </div>
+      </div>
+      <p>These CAD images show the structure and layout of the NexLock prototype components.</p>
+    </div>
+
+    <div class="engineering-card wide">
+      <span class="tag">Dimensions</span>
+      <h2>CAD Drawings with Dimensions</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="Drawing2.png" alt="CAD Drawing 1" />
+          <p>Dimension Drawing 1</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing3.png" alt="CAD Drawing 2" />
+          <p>Dimension Drawing 2</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing4.png" alt="CAD Drawing 3" />
+          <p>Dimension Drawing 3</p>
+        </div>
+      </div>
+      <p>These drawings show measurements, part layout, and physical sizing for the design.</p>
+    </div>
+
+    <div class="engineering-card wide">
+      <span class="tag">Motion</span>
+      <h2>Animation</h2>
+      <div class="media-box">
+        <video controls>
+          <source src="animation.mp4" type="video/mp4" />
+          Your browser does not support video.
+        </video>
+      </div>
+      <p>Upload your mechanism animation as <strong>animation.mp4</strong>.</p>
+    </div>
+
+    <div class="engineering-card wide">
+      <span class="tag">Rendering</span>
+      <h2>Photo Rendering</h2>
+      <div class="media-box">
+        <img src="Drawing5.png" alt="Photo Rendering" />
+      </div>
+      <p>This rendering shows how the final prototype could appear in a finished product form.</p>
+    </div>
+
+    <div class="engineering-card wide">
+      <span class="tag">Iterations</span>
+      <h2>Images of Various Design Iterations</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="Drawing1.png" alt="Design Iteration 1" />
+          <p>Iteration 1</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing2.png" alt="Design Iteration 2" />
+          <p>Iteration 2</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing3.png" alt="Design Iteration 3" />
+          <p>Iteration 3</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing4.png" alt="Design Iteration 4" />
+          <p>Iteration 4</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing5.png" alt="Design Iteration 5" />
+          <p>Iteration 5</p>
+        </div>
+        <div class="gallery-card">
+          <img src="Drawing6.png" alt="Design Iteration 6" />
+          <p>Iteration 6</p>
+        </div>
+      </div>
+      <p>
+        This section shows how the design developed over time through sketching, CAD modeling, testing, and engineering improvements.
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>Modern security with a smooth, easy look.</p>
+    <a href="#top" class="back-to-top">Back to top</a>
+  </div>
+</footer>
 
 </body>
 </html>
