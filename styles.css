@@ -2358,3 +2358,15 @@ color: var(--text-primary);
     height: auto;
   }
 }
+/* ONLY affects iteration images */
+.iteration-gallery.two,
+.iteration-gallery.three {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.iteration-gallery .gallery-card img {
+  width: 100%;
+  height: 200px;       /* controls size */
+  object-fit: contain; /* keeps full image visible */
+  background: white;
+}
