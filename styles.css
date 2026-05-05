@@ -2297,3 +2297,23 @@ color: var(--text-primary);
     grid-template-columns: 1fr;
   }
 }
+.iteration-group {
+  margin-top: 30px;
+}
+
+.iteration-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2F4A6D;
+  margin-bottom: 12px;
+}
+
+.gallery-grid.three-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 850px) {
+  .gallery-grid.three-grid {
+    grid-template-columns: 1fr;
+  }
+}
