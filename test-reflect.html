@@ -1,95 +1,271 @@
 <!DOCTYPE html>
+<html data-theme="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Test &amp; Reflect — NexLock One Touch</title>
+  <link href="assets/favicon.png" rel="icon" type="image/png"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
 
-<html data-theme="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Test &amp; Reflect — NexLock One Touch</title>
-<link href="assets/favicon.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=Noto+Sans+Thai:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
-</head><body><header class="header">
-<div class="header-inner">
-<a class="logo-link" href="index.html#home">
-<img alt="NexLock One Touch" class="logo" src="logo.png"/>
-</a>
-<nav class="nav">
-<a class="nav-link" href="index.html#home">Home</a>
-<div class="nav-dropdown">
-<button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle" type="button">
-      Our Process
-      <span aria-hidden="true" class="chev">▾</span>
-</button>
-<div class="nav-dropdown-menu" role="menu">
-<a class="nav-dropdown-item" href="background-research-problem-definition.html" role="menuitem">Background Research &amp; Problem Definition</a>
-<a class="nav-dropdown-item" href="ideate-solution.html" role="menuitem">Ideate Solution</a>
-<a class="nav-dropdown-item" href="final-engineering-design.html" role="menuitem">Final Engineering Design</a>
-<a class="nav-dropdown-item" href="test-reflect.html" role="menuitem">Test &amp; Reflect</a>
+  <style>
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .test-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(7,24,67,0.12);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 18px 45px rgba(7,24,67,0.10);
+    }
+
+    .test-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .test-card h2, .test-card h3 {
+      margin-top: 0;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      background: rgba(242,106,46,0.10);
+      border: 1px solid rgba(242,106,46,0.22);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 2rem;
+      color: #F26A2E;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    .clean-list li {
+      margin-bottom: 10px;
+    }
+
+    .quote-card {
+      background: rgba(247,244,239,0.75);
+      border-left: 4px solid #F26A2E;
+      padding: 16px;
+      border-radius: 14px;
+      margin-top: 12px;
+      color: #2F4A6D;
+      font-weight: 600;
+    }
+
+    @media (max-width: 850px) {
+      .test-grid,
+      .stat-row {
+        grid-template-columns: 1fr;
+      }
+
+      .test-card.wide {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo-link" href="index.html#home">
+      <img alt="NexLock One Touch" class="logo" src="logo.png"/>
+    </a>
+
+    <nav class="nav">
+      <a class="nav-link" href="index.html#home">Home</a>
+
+      <div class="nav-dropdown">
+        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle" type="button">
+          Our Process <span aria-hidden="true" class="chev">▾</span>
+        </button>
+
+        <div class="nav-dropdown-menu" role="menu">
+          <a class="nav-dropdown-item" href="background-research-problem-definition.html" role="menuitem">Background Research &amp; Problem Definition</a>
+          <a class="nav-dropdown-item" href="ideate-solution.html" role="menuitem">Ideate Solution</a>
+          <a class="nav-dropdown-item" href="final-engineering-design.html" role="menuitem">Final Engineering Design</a>
+          <a class="nav-dropdown-item" href="test-reflect.html" role="menuitem">Test &amp; Reflect</a>
+        </div>
+      </div>
+
+      <a class="nav-link" href="the-team.html">The Team</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Toggle light/dark theme" class="theme-toggle" type="button">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☾</span>
+      </button>
+
+      <button aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div aria-hidden="true" class="mobile-menu">
+  <nav class="mobile-nav">
+    <a class="mobile-nav-link" href="index.html#home">Home</a>
+    <a class="mobile-nav-link" href="background-research-problem-definition.html">Background Research &amp; Problem Definition</a>
+    <a class="mobile-nav-link" href="ideate-solution.html">Ideate Solution</a>
+    <a class="mobile-nav-link" href="final-engineering-design.html">Final Engineering Design</a>
+    <a class="mobile-nav-link" href="test-reflect.html">Test &amp; Reflect</a>
+    <a class="mobile-nav-link" href="the-team.html">The Team</a>
+    <a class="mobile-nav-link" href="index.html#contact">Contact</a>
+  </nav>
 </div>
-</div>
-<a class="nav-link" href="the-team.html">The Team</a>
-<a class="nav-link" href="index.html#contact">Contact</a>
-</nav>
-<div class="header-actions">
-<button aria-label="Toggle light/dark theme" class="theme-toggle" type="button">
-<span class="theme-icon sun">☀</span>
-<span class="theme-icon moon">☾</span>
-</button>
-<button aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
-<span class="hamburger-line"></span>
-<span class="hamburger-line"></span>
-<span class="hamburger-line"></span>
-</button>
-</div>
-</div>
-</header><div aria-hidden="true" class="mobile-menu">
-<nav class="mobile-nav"><a class="mobile-nav-link" href="index.html#home">Home</a><a class="mobile-nav-link" href="background-research-problem-definition.html">Background Research &amp; Problem Definition</a><a class="mobile-nav-link" href="ideate-solution.html">Ideate Solution</a><a class="mobile-nav-link" href="final-engineering-design.html">Final Engineering Design</a><a class="mobile-nav-link" href="test-reflect.html">Test &amp; Reflect</a><a class="mobile-nav-link" href="the-team.html">The Team</a><a class="mobile-nav-link" href="index.html#contact">Contact</a></nav>
-</div><main class="process-page"><section class="section page-hero"><div class="container"><h1>Test &amp; Reflect</h1><p class="lead">How we evaluated our prototype and what we learned from feedback and iteration.</p></div></section>
-<section class="section">
-<div class="container">
-<div class="process-stack">
-<div class="process-card reveal" data-reveal="fade-up">
-<div class="card-header">
-<span class="tag">Testing</span>
-<h2>Test &amp; Reflect</h2>
-</div>
-<p class="muted"><strong>Placeholder — ready to be filled after testing.</strong></p>
-</div>
-<div class="placeholder-grid">
-<div class="process-card reveal" data-reveal="fade-up">
-<h3>Testing Conducted</h3>
-<ul class="clean-list">
-<li>[Placeholder: Prototype stress testing]</li>
-<li>[Placeholder: Installation time trials]</li>
-<li>[Placeholder: User interaction testing]</li>
-<li>[Placeholder: Durability assessment]</li>
-</ul>
-</div>
-<div class="process-card reveal" data-reveal="fade-up">
-<h3>Results</h3>
-<ul class="clean-list">
-<li>[Placeholder: Performance outcomes]</li>
-<li>[Placeholder: Reliability metrics]</li>
-<li>[Placeholder: User feedback summary]</li>
-</ul>
-</div>
-<div class="process-card reveal" data-reveal="fade-up">
-<h3>Reflection</h3>
-<ul class="clean-list">
-<li>[Placeholder: What worked well]</li>
-<li>[Placeholder: What needs improvement]</li>
-<li>[Placeholder: Next iteration plans]</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+
+<main class="process-page">
+
+<section class="section page-hero">
+  <div class="container">
+    <span class="tag">Testing + Iteration</span>
+    <h1>Test &amp; Reflect</h1>
+    <p class="lead">
+      We tested NexLock One Touch with users to evaluate security, ease of use, attachment strength, and overall product experience.
+    </p>
+  </div>
 </section>
-</main><footer class="footer">
-<div class="container footer-inner">
-<img alt="NexLock One Touch" class="footer-logo" src="logo.png"/>
-<p class="footer-tagline">Modern security with a smooth, easy look.</p>
-<a class="back-to-top" href="#home">Back to top</a>
-</div>
-</footer><script src="script.js"></script></body></html>
+
+<section class="section">
+  <div class="container test-grid">
+
+    <div class="test-card wide reveal" data-reveal="fade-up">
+      <h2>Testing Scenarios</h2>
+      <p class="muted">
+        Users were asked to complete realistic tasks that tested the main functions of the prototype.
+      </p>
+
+      <ul class="clean-list">
+        <li><strong>Scenario 1:</strong> Try to open the cabinet while it is locked.</li>
+        <li><strong>Scenario 2:</strong> Use the fingerprint system to unlock the cabinet.</li>
+        <li><strong>Scenario 3:</strong> Close the cabinet and observe whether it locks automatically.</li>
+        <li><strong>Scenario 4:</strong> Leave the cabinet open and observe whether the buzzer activates.</li>
+      </ul>
+    </div>
+
+    <div class="test-card wide reveal" data-reveal="fade-up">
+      <h2>Test Results</h2>
+      <p>
+        Overall, NexLock received strong feedback from users. Most users rated the product highly in ease of use, functionality, and concept, with a majority of responses giving scores of 4 or 5.
+      </p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <strong>70%</strong>
+          <span>gave a perfect 5/5 rating</span>
+        </div>
+
+        <div class="stat-box">
+          <strong>80%</strong>
+          <span>rated the product a 4 or 5</span>
+        </div>
+
+        <div class="stat-box">
+          <strong>60%</strong>
+          <span>mentioned attachment concerns</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-card reveal" data-reveal="fade-up">
+      <h2>Reviewer Feedback</h2>
+      <p>
+        Users praised the product for being simple, efficient, and visually acceptable for a kitchen or home environment.
+      </p>
+
+      <div class="quote-card">“A single touch of a fingerprint unlocks it.”</div>
+      <div class="quote-card">“It is efficient.”</div>
+      <div class="quote-card">“It doesn’t make my kitchen look ugly.”</div>
+    </div>
+
+    <div class="test-card reveal" data-reveal="fade-up">
+      <h2>Main Weakness Found</h2>
+      <p>
+        The biggest issue was attachment stability. Multiple users said the product needed to stay attached more securely and should not loosen or fall off when unlocked for too long.
+      </p>
+
+      <ul class="clean-list">
+        <li>Some users said to “make sure it stays on.”</li>
+        <li>Others said it “needs to attach to the cabinets.”</li>
+        <li>Several users noticed it could become loose over time.</li>
+      </ul>
+    </div>
+
+    <div class="test-card wide reveal" data-reveal="fade-up">
+      <h2>Reflections and Design Iterations</h2>
+      <p>
+        The feedback confirmed that the core concept is strong because users understood the system quickly and liked the fingerprint-based unlocking. However, the attachment concerns showed that the physical mounting system needed the most improvement.
+      </p>
+
+      <ul class="clean-list">
+        <li><strong>What worked:</strong> The fingerprint unlocking system was easy to understand and use.</li>
+        <li><strong>What needed improvement:</strong> The lock needed a stronger and more reliable attachment method.</li>
+        <li><strong>How feedback shaped the design:</strong> Future iterations will focus on stronger mounting, smaller sizing, and more adaptable attachment options for different cabinets and handles.</li>
+      </ul>
+    </div>
+
+    <div class="test-card reveal" data-reveal="fade-up">
+      <h2>Future Work / Improvements</h2>
+      <ul class="clean-list">
+        <li>Improve the attachment system so the product does not loosen or fall.</li>
+        <li>Use stronger and more durable materials.</li>
+        <li>Make the overall lock smaller and more visually appealing.</li>
+        <li>Create adjustable parts so the lock fits more cabinet and handle types.</li>
+        <li>Add a stronger locking system for better long-term reliability.</li>
+        <li>Lower production cost to make the product more affordable.</li>
+      </ul>
+    </div>
+
+    <div class="test-card reveal" data-reveal="fade-up">
+      <h2>Marketing Plan</h2>
+      <p>
+        NexLock would be marketed toward parents and families who want a safer home without complicated or unattractive childproofing products.
+      </p>
+
+      <ul class="clean-list">
+        <li>Promote the product as simple, secure, and modern.</li>
+        <li>Highlight the one-touch fingerprint unlocking feature.</li>
+        <li>Use social media videos showing the product working on cabinets.</li>
+        <li>Sell through parenting websites, home safety stores, and online marketplaces.</li>
+        <li>Emphasize peace of mind, convenience, and child safety.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <img alt="NexLock One Touch" class="footer-logo" src="logo.png"/>
+    <p class="footer-tagline">Modern security with a smooth, easy look.</p>
+    <a class="back-to-top" href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
