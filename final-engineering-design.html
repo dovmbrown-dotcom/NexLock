@@ -1,223 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Final Engineering Design — NexLock One Touch</title>
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link href="styles.css" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <link href="styles.css" rel="stylesheet"/>
+
   <style>
-    :root {
-      --navy: #071843;
-      --blue: #2F4A6D;
-      --light-blue: #7C9DBD;
-      --orange: #F26A2E;
-      --soft-bg: #F7F4EF;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Noto Sans Thai", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(124,157,189,0.18), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(242,106,46,0.12), transparent 30%),
-        var(--soft-bg);
-      color: var(--navy);
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(247, 244, 239, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(7, 24, 67, 0.12);
-    }
-
-    .header-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .nav a:hover {
-      color: var(--orange);
-    }
-
-    .container {
-      width: min(1150px, 92%);
-      margin: 0 auto;
-    }
-
-    .page-hero {
-      padding: 90px 0 50px;
-      text-align: center;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(242, 106, 46, 0.12);
-      color: var(--orange);
-      font-weight: 800;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
-    }
-
-    h1, h2, h3 {
-      font-family: "Bricolage Grotesque", sans-serif;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    .lead {
-      max-width: 780px;
-      margin: 0 auto;
-      font-size: 1.15rem;
-      color: var(--blue);
-      line-height: 1.7;
-    }
 
     .engineering-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 28px;
-      padding: 30px 0 90px;
     }
 
     .engineering-card {
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(7, 24, 67, 0.12);
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(7,24,67,0.12);
       border-radius: 26px;
       padding: 28px;
-      box-shadow: 0 18px 50px rgba(7, 24, 67, 0.10);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 18px 50px rgba(7,24,67,0.10);
     }
 
-    .engineering-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 65px rgba(7, 24, 67, 0.16);
-    }
-
-    .wide {
+    .engineering-card.wide {
       grid-column: 1 / -1;
     }
 
     .engineering-card h2 {
-      font-size: 1.7rem;
-      margin-bottom: 16px;
-      color: var(--navy);
-    }
-
-    .engineering-card p {
-      color: var(--blue);
-      line-height: 1.65;
-      margin: 14px 0 0;
+      margin-top: 0;
     }
 
     .media-box {
       margin-top: 18px;
-      background: linear-gradient(135deg, rgba(124,157,189,0.18), rgba(242,106,46,0.10));
-      border: 1px solid rgba(7, 24, 67, 0.12);
       border-radius: 22px;
-      padding: 18px;
-      min-height: 230px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       overflow: hidden;
+      background: rgba(247,244,239,0.85);
+      border: 1px solid rgba(7,24,67,0.10);
+      padding: 16px;
     }
 
     .media-box img,
     .media-box video {
-      max-width: 100%;
       width: 100%;
-      max-height: 520px;
-      border-radius: 16px;
+      border-radius: 14px;
       display: block;
-      object-fit: contain;
-      background: white;
     }
 
     .bom-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 18px;
-      border-radius: 16px;
+      margin-top: 20px;
       overflow: hidden;
-      background: white;
+      border-radius: 18px;
     }
 
     .bom-table th,
     .bom-table td {
-      padding: 15px;
+      padding: 14px;
+      border-bottom: 1px solid rgba(7,24,67,0.08);
       text-align: left;
-      border-bottom: 1px solid rgba(7, 24, 67, 0.12);
     }
 
     .bom-table th {
-      background: rgba(124, 157, 189, 0.22);
-      color: var(--navy);
-      font-weight: 800;
-    }
-
-    .bom-table tfoot td {
-      font-weight: 800;
-      color: var(--navy);
-      background: rgba(242, 106, 46, 0.08);
+      background: rgba(124,157,189,0.14);
     }
 
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-      margin-top: 20px;
-    }
-
-    .six-grid {
-      grid-template-columns: repeat(2, 1fr);
+      margin-top: 18px;
     }
 
     .gallery-card {
-      background: rgba(247, 244, 239, 0.92);
-      border: 1px solid rgba(7, 24, 67, 0.12);
+      background: rgba(247,244,239,0.85);
       border-radius: 20px;
       padding: 14px;
+      border: 1px solid rgba(7,24,67,0.08);
       text-align: center;
-      box-shadow: 0 10px 28px rgba(7, 24, 67, 0.08);
     }
 
     .gallery-card img {
@@ -225,26 +95,18 @@
       height: 260px;
       object-fit: contain;
       border-radius: 14px;
+      background: white;
       display: block;
       margin-bottom: 10px;
-      background: white;
-    }
-
-    .gallery-card p {
-      margin: 0;
-      font-weight: 800;
-      color: var(--blue);
     }
 
     .placeholder-card {
       margin-top: 18px;
-      border: 1px dashed rgba(7, 24, 67, 0.25);
-      background: rgba(247, 244, 239, 0.72);
+      border: 2px dashed rgba(7,24,67,0.18);
       border-radius: 20px;
-      padding: 34px;
-      color: var(--blue);
+      padding: 50px;
       text-align: center;
-      font-weight: 700;
+      background: rgba(247,244,239,0.55);
     }
 
     .iteration-group {
@@ -255,7 +117,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-      width: 100%;
     }
 
     .iteration-gallery .gallery-card img {
@@ -266,361 +127,424 @@
     }
 
     .iteration-subtitle {
-      font-size: 1.08rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin: 16px 0 0;
-      padding: 14px 16px;
-      border-left: 4px solid var(--orange);
-      background: rgba(242, 106, 46, 0.08);
-      border-radius: 14px;
-    }
-
-    .footer {
-      padding: 34px 0;
-      border-top: 1px solid rgba(7, 24, 67, 0.12);
-      text-align: center;
-      color: var(--blue);
-    }
-
-    .back-to-top {
-      color: var(--orange);
-      font-weight: 800;
-      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2F4A6D;
+      margin: 14px 0 0;
+      padding: 12px 14px;
+      background: rgba(124, 157, 189, 0.10);
+      border-left: 4px solid #F26A2E;
+      border-radius: 12px;
+      line-height: 1.6;
     }
 
     @media (max-width: 850px) {
-      .nav {
-        display: none;
-      }
 
-      .engineering-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .wide {
-        grid-column: auto;
-      }
-
+      .engineering-grid,
       .gallery-grid,
-      .six-grid,
       .iteration-gallery {
         grid-template-columns: 1fr;
+      }
+
+      .engineering-card.wide {
+        grid-column: auto;
       }
 
       .gallery-card img,
       .iteration-gallery .gallery-card img {
         height: auto;
       }
-
-      .logo {
-        height: 38px;
-      }
     }
+
   </style>
 </head>
 
-<body id="top">
+<body>
 
 <header class="header">
   <div class="header-inner">
+
     <a class="logo-link" href="index.html#home">
       <img alt="NexLock One Touch" class="logo" src="logo.png"/>
     </a>
 
     <nav class="nav">
+
       <a class="nav-link" href="index.html#home">Home</a>
 
       <div class="nav-dropdown">
-        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle" type="button">
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="nav-link nav-dropdown-toggle"
+          type="button"
+        >
           Our Process
           <span aria-hidden="true" class="chev">▾</span>
         </button>
 
         <div class="nav-dropdown-menu" role="menu">
-          <a class="nav-dropdown-item" href="background-research-problem-definition.html" role="menuitem">Background Research &amp; Problem Definition</a>
-          <a class="nav-dropdown-item" href="ideate-solution.html" role="menuitem">Ideate Solution</a>
-          <a class="nav-dropdown-item" href="final-engineering-design.html" role="menuitem">Final Engineering Design</a>
-          <a class="nav-dropdown-item" href="test-reflect.html" role="menuitem">Test &amp; Reflect</a>
+
+          <a class="nav-dropdown-item"
+             href="background-research-problem-definition.html"
+             role="menuitem">
+             Background Research &amp; Problem Definition
+          </a>
+
+          <a class="nav-dropdown-item"
+             href="ideate-solution.html"
+             role="menuitem">
+             Ideate Solution
+          </a>
+
+          <a class="nav-dropdown-item"
+             href="final-engineering-design.html"
+             role="menuitem">
+             Final Engineering Design
+          </a>
+
+          <a class="nav-dropdown-item"
+             href="test-reflect.html"
+             role="menuitem">
+             Test &amp; Reflect
+          </a>
+
         </div>
       </div>
 
       <a class="nav-link" href="the-team.html">The Team</a>
-      <a class="nav-link" href="index.html#contact">Contact</a>
+
+      <a class="nav-link" href="index.html#contact">
+        Contact
+      </a>
+
     </nav>
 
     <div class="header-actions">
-      <button aria-label="Toggle light/dark theme" class="theme-toggle" type="button">
+
+      <button
+        aria-label="Toggle light/dark theme"
+        class="theme-toggle"
+        type="button"
+      >
         <span class="theme-icon sun">☀</span>
         <span class="theme-icon moon">☾</span>
       </button>
 
-      <button aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
+      <button
+        aria-expanded="false"
+        aria-label="Open menu"
+        class="hamburger"
+        type="button"
+      >
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
+
     </div>
   </div>
 </header>
+
 <div aria-hidden="true" class="mobile-menu">
   <nav class="mobile-nav">
-    <a class="mobile-nav-link" href="index.html#home">Home</a>
-    <a class="mobile-nav-link" href="background-research-problem-definition.html">Background Research &amp; Problem Definition</a>
-    <a class="mobile-nav-link" href="ideate-solution.html">Ideate Solution</a>
-    <a class="mobile-nav-link" href="final-engineering-design.html">Final Engineering Design</a>
-    <a class="mobile-nav-link" href="test-reflect.html">Test &amp; Reflect</a>
-    <a class="mobile-nav-link" href="the-team.html">The Team</a>
-    <a class="mobile-nav-link" href="index.html#contact">Contact</a>
+
+    <a class="mobile-nav-link" href="index.html#home">
+      Home
+    </a>
+
+    <a class="mobile-nav-link"
+       href="background-research-problem-definition.html">
+       Background Research &amp; Problem Definition
+    </a>
+
+    <a class="mobile-nav-link"
+       href="ideate-solution.html">
+       Ideate Solution
+    </a>
+
+    <a class="mobile-nav-link"
+       href="final-engineering-design.html">
+       Final Engineering Design
+    </a>
+
+    <a class="mobile-nav-link"
+       href="test-reflect.html">
+       Test &amp; Reflect
+    </a>
+
+    <a class="mobile-nav-link"
+       href="the-team.html">
+       The Team
+    </a>
+
+    <a class="mobile-nav-link"
+       href="index.html#contact">
+       Contact
+    </a>
+
   </nav>
 </div>
-<main>
 
-  <section class="page-hero">
-    <div class="container">
-      <span class="tag">Engineering Portfolio</span>
-      <h1>Final Engineering Design</h1>
-      <p class="lead">
-        This page documents the final NexLock One Touch prototype, including the working system, diagrams, materials, CAD models, and design iterations.
-      </p>
+<main class="process-page">
+
+<section class="section page-hero">
+  <div class="container">
+    <span class="tag">Engineering Portfolio</span>
+
+    <h1>Final Engineering Design</h1>
+
+    <p class="lead">
+      This page documents the final NexLock One Touch prototype,
+      including the working system, diagrams, CAD models,
+      materials, and design iterations.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+<div class="container engineering-grid">
+
+  <div class="engineering-card wide reveal">
+    <span class="tag">Prototype</span>
+
+    <h2>Video of Working Prototype</h2>
+
+    <div class="media-box">
+      <video controls>
+        <source src="working-prototype.mp4" type="video/mp4"/>
+      </video>
     </div>
-  </section>
+  </div>
 
-  <section class="container engineering-grid">
+  <div class="engineering-card reveal">
+    <span class="tag">System Logic</span>
 
-    <div class="engineering-card wide">
-      <span class="tag">Prototype</span>
-      <h2>Video of Working Prototype</h2>
-      <div class="media-box">
-        <video controls>
-          <source src="working-prototype.mp4" type="video/mp4" />
-          Your browser does not support video.
-        </video>
+    <h2>System Block Diagram</h2>
+
+    <div class="media-box">
+      <img src="BlockDiagram.png" alt="System Block Diagram"/>
+    </div>
+  </div>
+
+  <div class="engineering-card reveal">
+    <span class="tag">Materials</span>
+
+    <h2>Bill of Materials with Costs</h2>
+
+    <table class="bom-table">
+
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Purpose</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Servo Motor</td>
+          <td>Moves the hook/latch mechanism</td>
+          <td>$10.99</td>
+        </tr>
+
+        <tr>
+          <td>Fingerprint Sensor</td>
+          <td>Authenticates user access</td>
+          <td>$13.99</td>
+        </tr>
+
+        <tr>
+          <td>Buzzer</td>
+          <td>Alerts when cabinet is left open</td>
+          <td>$1.99</td>
+        </tr>
+
+        <tr>
+          <td>Arduino</td>
+          <td>Controls input/output logic</td>
+          <td>$20.00</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+  <div class="engineering-card reveal">
+    <span class="tag">Electronics</span>
+
+    <h2>Wiring Diagram</h2>
+
+    <div class="media-box">
+      <img src="WiringDiagram.png" alt="Wiring Diagram"/>
+    </div>
+  </div>
+
+  <div class="engineering-card reveal">
+    <span class="tag">Code Logic</span>
+
+    <h2>Programming Flowchart</h2>
+
+    <div class="media-box">
+      <img src="programming-flowchart.png" alt="Programming Flowchart"/>
+    </div>
+  </div>
+
+  <div class="engineering-card wide reveal">
+
+    <span class="tag">CAD</span>
+
+    <h2>CAD Model</h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="CAD1.png" alt="CAD 1"/>
+        <p>CAD Model View 1</p>
       </div>
-      <p>Upload your working prototype video as <strong>working-prototype.mp4</strong>.</p>
-    </div>
 
-    <div class="engineering-card">
-      <span class="tag">System Logic</span>
-      <h2>System Block Diagram</h2>
-      <div class="media-box">
-        <img src="BlockDiagram.png" alt="System Block Diagram" />
+      <div class="gallery-card">
+        <img src="CAD2.png" alt="CAD 2"/>
+        <p>CAD Model View 2</p>
       </div>
-      <p>This diagram shows how the fingerprint sensor, servo, buzzer, and locking mechanism work together.</p>
+
     </div>
 
-    <div class="engineering-card">
-      <span class="tag">Materials</span>
-      <h2>Bill of Materials with Costs</h2>
-      <table class="bom-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Purpose</th>
-            <th>Cost</th>
-          </tr>
-        </thead>
+  </div>
 
-        <tbody>
-          <tr>
-            <td>Servo Motor</td>
-            <td>Moves the hook/latch mechanism</td>
-            <td>$10.99</td>
-          </tr>
-          <tr>
-            <td>Fingerprint Sensor</td>
-            <td>Authenticates user access</td>
-            <td>$13.99</td>
-          </tr>
-          <tr>
-            <td>Buzzer</td>
-            <td>Alerts when cabinet is left open</td>
-            <td>$1.99</td>
-          </tr>
-          <tr>
-            <td>Arduino</td>
-            <td>Controls input/output logic</td>
-            <td>$20.00</td>
-          </tr>
-          <tr>
-            <td>Battery</td>
-            <td>Powers the system</td>
-            <td>$9.99</td>
-          </tr>
-        </tbody>
+  <div class="engineering-card wide reveal">
 
-        <tfoot>
-          <tr>
-            <td>Total</td>
-            <td></td>
-            <td>$56.96</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
+    <span class="tag">Dimensions</span>
 
-    <div class="engineering-card">
-      <span class="tag">Electronics</span>
-      <h2>Wiring Diagram</h2>
-      <div class="media-box">
-        <img src="WiringDiagram.png" alt="Wiring Diagram" />
+    <h2>CAD Drawings with Dimensions</h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="Drawing1.png"/>
       </div>
-      <p>This diagram shows the connections between the board, fingerprint sensor, servo, buzzer, and power source.</p>
-    </div>
 
-    <div class="engineering-card">
-      <span class="tag">Code Logic</span>
-      <h2>Programming Flowchart</h2>
-      <div class="media-box">
-        <img src="programming-flowchart.png" alt="Programming Flowchart" />
+      <div class="gallery-card">
+        <img src="Drawing2.png"/>
       </div>
-      <p>This flowchart shows the logic from fingerprint scan to unlock, buzzer alert, and relock.</p>
+
+      <div class="gallery-card">
+        <img src="Drawing3.png"/>
+      </div>
+
+      <div class="gallery-card">
+        <img src="Drawing4.png"/>
+      </div>
+
+      <div class="gallery-card">
+        <img src="Drawing5.png"/>
+      </div>
+
+      <div class="gallery-card">
+        <img src="Drawing6.png"/>
+      </div>
+
     </div>
 
-    <div class="engineering-card wide">
-      <span class="tag">CAD</span>
-      <h2>CAD Model</h2>
+  </div>
 
-      <div class="gallery-grid">
+  <div class="engineering-card wide reveal">
+
+    <span class="tag">Iterations</span>
+
+    <h2>Images of Various Design Iterations</h2>
+
+    <div class="iteration-group">
+
+      <div class="iteration-gallery">
+
         <div class="gallery-card">
-          <img src="CAD1.png" alt="CAD Model 1" />
-          <p>CAD Model View 1</p>
+          <img src="iteration1.png"/>
+          <p>Iteration 1</p>
         </div>
 
         <div class="gallery-card">
-          <img src="CAD2.png" alt="CAD Model 2" />
-          <p>CAD Model View 2</p>
+          <img src="iteration2.png"/>
+          <p>Iteration 2</p>
         </div>
+
       </div>
 
-      <p>These CAD images show the structure and layout of the NexLock prototype components.</p>
+      <div class="iteration-subtitle">
+        Early iterations focused on creating a miniature prototype to test whether the internal components could function together within a compact enclosure.
+      </div>
+
     </div>
 
-    <div class="engineering-card wide">
-      <span class="tag">Dimensions</span>
-      <h2>CAD Drawings with Dimensions</h2>
+    <div class="iteration-group">
 
-      <div class="gallery-grid six-grid">
+      <div class="iteration-gallery">
+
         <div class="gallery-card">
-          <img src="Drawing1.png" alt="CAD Drawing with Dimensions 1" />
-          <p>Drawing 1</p>
+          <img src="iteration3.png"/>
+          <p>Iteration 3</p>
         </div>
 
         <div class="gallery-card">
-          <img src="Drawing2.png" alt="CAD Drawing with Dimensions 2" />
-          <p>Drawing 2</p>
+          <img src="iteration4.png"/>
+          <p>Iteration 4</p>
         </div>
 
-        <div class="gallery-card">
-          <img src="Drawing3.png" alt="CAD Drawing with Dimensions 3" />
-          <p>Drawing 3</p>
-        </div>
-
-        <div class="gallery-card">
-          <img src="Drawing4.png" alt="CAD Drawing with Dimensions 4" />
-          <p>Drawing 4</p>
-        </div>
-
-        <div class="gallery-card">
-          <img src="Drawing5.png" alt="CAD Drawing with Dimensions 5" />
-          <p>Drawing 5</p>
-        </div>
-
-        <div class="gallery-card">
-          <img src="Drawing6.png" alt="CAD Drawing with Dimensions 6" />
-          <p>Drawing 6</p>
-        </div>
       </div>
 
-      <p>These CAD drawings show the dimensions, measurements, and part layout for the NexLock One Touch prototype.</p>
+      <div class="iteration-subtitle">
+        The second design phase focused on improving component spacing, internal organization, and hook geometry.
+      </div>
+
     </div>
 
-    <div class="engineering-card wide">
-      <span class="tag">Motion</span>
-      <h2>Animation</h2>
+    <div class="iteration-group">
 
-      <div class="media-box">
-        <video controls>
-          <source src="animation.mp4" type="video/mp4" />
-          Your browser does not support video.
-        </video>
+      <div class="iteration-gallery">
+
+        <div class="gallery-card">
+          <img src="iteration5.png"/>
+          <p>Iteration 5</p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="iteration6.png"/>
+          <p>Iteration 6</p>
+        </div>
+
       </div>
 
-      <p>Upload your mechanism animation as <strong>animation.mp4</strong>.</p>
+      <div class="iteration-subtitle">
+        The final iterations transitioned from experimental prototypes to a fully refined functional design with accurate sizing, improved structure, and polished usability.
+      </div>
+
     </div>
 
-    <div class="engineering-card wide">
-      <span class="tag">Iterations</span>
-      <h2>Images of Various Design Iterations</h2>
+  </div>
 
-      <div class="iteration-group">
-        <div class="iteration-gallery">
-          <div class="gallery-card">
-            <img src="Iteration1.png" alt="Iteration 1" />
-            <p>Iteration 1</p>
-          </div>
-
-          <div class="gallery-card">
-            <img src="Iteration2.png" alt="Iteration 2" />
-            <p>Iteration 2</p>
-          </div>
-        </div>
-
-        <h3 class="iteration-subtitle">Early iterations focused on creating a miniature prototype to test whether the internal components could function together within a compact enclosure. During this phase, multiple filament materials and print settings were tested to evaluate durability, print quality, and structural reliability. The orange prototype shown represented one of the less successful material tests, helping identify weaknesses in both strength and fit before moving toward a refined design.</h3>
-      </div>
-
-      <div class="iteration-group">
-        <div class="iteration-gallery">
-          <div class="gallery-card">
-            <img src="Iteration3.png" alt="Iteration 3" />
-            <p>Iteration 3</p>
-          </div>
-
-          <div class="gallery-card">
-            <img src="Iteration4.png" alt="Iteration 4" />
-            <p>Iteration 4</p>
-          </div>
-        </div>
-
-        <h3 class="iteration-subtitle">The second design phase focused on improving component spacing, internal organization, and hook geometry. Additional sample-scale prototypes were created to determine the ideal hook angle, latch positioning, and enclosure dimensions needed for smooth locking and unlocking. These iterations helped refine the mechanical movement of the system while ensuring the components could fit together more efficiently and reliably.</h3>
-      </div>
-
-      <div class="iteration-group">
-        <div class="iteration-gallery">
-          <div class="gallery-card">
-            <img src="Iteration5.png" alt="Iteration 5" />
-            <p>Iteration 5</p>
-          </div>
-
-          <div class="gallery-card">
-            <img src="Iteration6.png" alt="Iteration 6" />
-            <p>Iteration 6</p>
-          </div>
-
-          <div class="gallery-card">
-            <img src="Iteration7.png" alt="Iteration 7" />
-            <p>Iteration 7</p>
-          </div>
-        </div>
-
-        <h3 class="iteration-subtitle">The final iterations transitioned from experimental prototypes to a fully refined functional design with accurate sizing, an integrated handle, optimized hook and latch geometry, and improved overall structure. These versions focused on usability, stability, and manufacturability while maintaining a compact and visually clean appearance. Feedback and testing from earlier prototypes were incorporated to create a more polished and reliable final product ready for implementation.</h3>
-      </div>
-
-      <p>
-        These iterations show how the NexLock design evolved through testing, feedback, and engineering improvements.
-      </p>
-    </div>
-
-  </section>
+</div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div class="container">
-    <p>Modern security with a smooth, easy look.</p>
-    <a href="#top" class="back-to-top">Back to top</a>
+  <div class="container footer-inner">
+
+    <img alt="NexLock One Touch" class="footer-logo" src="logo.png"/>
+
+    <p class="footer-tagline">
+      Modern security with a smooth, easy look.
+    </p>
+
+    <a class="back-to-top" href="#home">
+      Back to top
+    </a>
+
   </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
