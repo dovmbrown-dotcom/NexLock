@@ -7,7 +7,7 @@
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+<link href="styles.css" rel="stylesheet"/>
   <style>
     :root {
       --navy: #071843;
@@ -328,21 +328,56 @@
 
 <header class="header">
   <div class="header-inner">
-    <a href="index.html#home">
-      <img src="logo.png" alt="NexLock One Touch Logo" class="logo" />
+    <a class="logo-link" href="index.html#home">
+      <img alt="NexLock One Touch" class="logo" src="logo.png"/>
     </a>
 
     <nav class="nav">
-      <a href="index.html#home">Home</a>
-      <a href="background-research-problem-definition.html">Research</a>
-      <a href="ideate-solution.html">Ideate</a>
-      <a href="final-engineering-design.html">Final Design</a>
-      <a href="test-reflect.html">Test &amp; Reflect</a>
-      <a href="the-team.html">The Team</a>
+      <a class="nav-link" href="index.html#home">Home</a>
+
+      <div class="nav-dropdown">
+        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle" type="button">
+          Our Process
+          <span aria-hidden="true" class="chev">▾</span>
+        </button>
+
+        <div class="nav-dropdown-menu" role="menu">
+          <a class="nav-dropdown-item" href="background-research-problem-definition.html" role="menuitem">Background Research &amp; Problem Definition</a>
+          <a class="nav-dropdown-item" href="ideate-solution.html" role="menuitem">Ideate Solution</a>
+          <a class="nav-dropdown-item" href="final-engineering-design.html" role="menuitem">Final Engineering Design</a>
+          <a class="nav-dropdown-item" href="test-reflect.html" role="menuitem">Test &amp; Reflect</a>
+        </div>
+      </div>
+
+      <a class="nav-link" href="the-team.html">The Team</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
     </nav>
+
+    <div class="header-actions">
+      <button aria-label="Toggle light/dark theme" class="theme-toggle" type="button">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☾</span>
+      </button>
+
+      <button aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </div>
 </header>
-
+<div aria-hidden="true" class="mobile-menu">
+  <nav class="mobile-nav">
+    <a class="mobile-nav-link" href="index.html#home">Home</a>
+    <a class="mobile-nav-link" href="background-research-problem-definition.html">Background Research &amp; Problem Definition</a>
+    <a class="mobile-nav-link" href="ideate-solution.html">Ideate Solution</a>
+    <a class="mobile-nav-link" href="final-engineering-design.html">Final Engineering Design</a>
+    <a class="mobile-nav-link" href="test-reflect.html">Test &amp; Reflect</a>
+    <a class="mobile-nav-link" href="the-team.html">The Team</a>
+    <a class="mobile-nav-link" href="index.html#contact">Contact</a>
+  </nav>
+</div>
 <main>
 
   <section class="page-hero">
