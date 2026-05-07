@@ -2302,10 +2302,15 @@ color: var(--text-primary);
 }
 
 .iteration-subtitle {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   color: #2F4A6D;
-  margin-bottom: 12px;
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  background: rgba(124, 157, 189, 0.10);
+  border-left: 4px solid #F26A2E;
+  border-radius: 12px;
+  line-height: 1.6;
 }
 
 .gallery-grid.three-grid {
