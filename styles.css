@@ -2478,3 +2478,24 @@ html[data-theme="dark"] .bom-table td {
     grid-template-columns: 1fr;
   }
 }
+.contact-simple {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-email {
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.contact-email a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
